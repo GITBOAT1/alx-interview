@@ -5,19 +5,15 @@ def canUnlockAll(boxes):
        keys to the other boxes.
     """
 
-    # Set of box numbers that are unlocked
-    unlocked = {0}
-    # List of box numbers that still need to be checked for keys
-    to_check = [0]
+    num_boxes = len(boxes)
+    unlocked_boxes = [False] * num_boxes
+    unlocked_boxes[0] = True
+    keys = [0]
 
-    while to_check:
-        box_num = to_check.pop(0)
-        box = boxes[box_num]
-        # Check each key in the current box
-        for key in box:
-            # If the key opens a new box and that box isn't already unlocked
-            if key < len(boxes) and key not in unlocked:
-                unlocked.add(key)
-                to_check.append(key)
-
-    return len(unlocked) == len(boxes)
+    while keys:
+        box_idx = keys.pop()
+        for key in boxes[box_idx]:
+            if key < num_boxes and not unlocked_boxes[key]:
+                unlocked_boxes[key] = True
+                keys.append(key)
+    return all(unlocked_boxes)
