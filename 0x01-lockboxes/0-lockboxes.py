@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 def canUnlockAll(boxes):
+    """number of locked boxes in front of you. Each box is numbered
+       sequentially from 0 to n - 1 and each box may contain
+       keys to the other boxes.
+    """
+
     # Set of box numbers that are unlocked
     unlocked = {0}
     # List of box numbers that still need to be checked for keys
