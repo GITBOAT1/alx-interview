@@ -33,3 +33,17 @@ try:
         # extract the file size and status code from the line
         file_size = int(match.group(4)) if match.group(4) != '-' else 0
         status_code = int(match.group(3))
+
+# update the total file size and the status code count
+        total_size += file_size
+        if status_code in status_codes:
+            status_codes[status_code] += 1
+        else:
+            status_codes[status_code] = 1
+
+        # print statistics every 10 lines or on keyboard interruption
+        if i % 10 == 0:
+            print("Total file size:", total_size)
+            for code in sorted(status_codes):
+                print(f"{code}: {status_codes[code]}")
+            print()        
