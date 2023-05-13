@@ -45,7 +45,6 @@ try:
             for rep in sorted(status_codes):
                 #""" loop """
                 print(f"{rep}: {status_codes[rep]}")
-            print()
 
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
