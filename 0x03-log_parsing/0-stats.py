@@ -39,6 +39,9 @@ try:
         else:
             status_codes[status_code] = 1
 
+        # print statistics every 10 lines or on keyboard interruption
+        if i % 10 == 0:
+            print("Total file size:", total_size)
 
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
