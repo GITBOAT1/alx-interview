@@ -16,13 +16,15 @@ regex = r'^([\d\.]+) - \[(.*?)\] "GET \/projects\/260 HTTP\/1\.1" (\d+) (\d+|-)$
 pattern = re.compile(regex)
 
 
-total_size = 0
-status_codes = {}
-
-ode}: {status_codes[code]}")
-            print()
-
-except KeyboardInterrupt:
-    print("Total file size:", total_size)
-    for code in sorted(status_codes):
-        print(f"{code}: {status_codes[code]}")
+for line in sys.stdin:
+    try:
+        val = float(line.strip())
+        count += 1
+        total += val
+        if val < min_val:
+            min_val = val
+        if val > max_val:
+            max_val = val
+    except ValueError:
+        # ignore lines that are not valid numbers
+        pass
