@@ -22,18 +22,6 @@ regex = r'^([\d\.]+) - \[(.*?)\] "GET \/projects\/260 HTTP\/1\.1" \
 pattern = re.compile(regex)
 
 
-def stat(i, status_codes):
-    """
-    print statistics every 10 lines or on keyboard
-    interruption
-    """
-    if i % 10 == 0:
-        print("Total file size:", total_size)
-        for code in sorted(status_codes):
-            print(f"{code}: {status_codes[code]}")
-        print()
-
-
 try:
     """read input line by line """
     for i, line in enumerate(sys.stdin, start=1):
