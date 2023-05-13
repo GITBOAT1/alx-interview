@@ -24,6 +24,11 @@ pattern = re.compile(regex)
 
 try:
     """read input line by line """
+    for i, line in enumerate(sys.stdin, start=1):
+        # check if the line matches the input format
+        match = pattern.match(line.strip())
+        if not match:
+            continue
 
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
