@@ -29,6 +29,9 @@ try:
         match = pattern.match(line.strip())
         if not match:
             continue
+        # extract the file size and status code from the line
+        file_size = int(match.group(4)) if match.group(4) != '-' else 0
+        status_code = int(match.group(3))
 
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
