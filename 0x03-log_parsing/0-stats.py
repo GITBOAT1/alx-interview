@@ -7,11 +7,6 @@ script that reads stdin line by line and computes metrics:
 import sys
 
 
-"""
-script that reads stdin line by line and computes metrics:
-"""
-
-
 for line in sys.stdin:
     try:
         val = float(line.strip())
