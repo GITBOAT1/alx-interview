@@ -28,5 +28,3 @@ try:
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
     print("Total file size:", total_size)
-    for code in sorted(status):
-        print(f"{code}: {status[code]}")
