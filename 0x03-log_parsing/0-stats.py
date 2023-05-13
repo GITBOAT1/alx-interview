@@ -43,7 +43,3 @@ try:
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
     print("Total file size:", total_size)
-
-    while code in sorted(status_codes):
-        """ print status"""
-        print(f"{code}: {status_codes[code]}")
