@@ -51,7 +51,6 @@ try:
         else:
             status_codes[status_code] = 1
 
-        stat(i, status_codes)
 
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
