@@ -15,7 +15,7 @@ script that reads stdin line by line and computes metrics:
 
 # initialize variables
 total_size = 0
-status_codes = {}
+status = {}
 
 regex = r'^([\d\.]+) - \[(.*?)\] "GET \/projects\/260 HTTP\/1\.1" \
 (\d+) (\d+|-)$'
@@ -28,5 +28,5 @@ try:
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
     print("Total file size:", total_size)
-    for code in sorted(status_codes):
-        print(f"{code}: {status_codes[code]}")
+    for code in sorted(status):
+        print(f"{code}: {status[code]}")
