@@ -23,7 +23,7 @@ pattern = re.compile(regex)
 
 
 try:
-    fg
+    """fg"""
 
 except KeyboardInterrupt:
-    j = 6
+    """j = 6"""
