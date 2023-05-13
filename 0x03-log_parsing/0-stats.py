@@ -13,7 +13,7 @@ File size: <total size> where <total size> is the sum of all previous
 <file size> (see input format above)
 Number of lines by status code:
 possible status code: 200, 301, 400, 401, 403, 404, 405 and 500
- """
+"""
 
 
 # Initialize dictionaries to store metrics
@@ -34,7 +34,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 
 def print_metrics():
-    """ 
+    """
     # Define a function to print the current metrics
     """
     print(f"Total file size: {total_size}")
