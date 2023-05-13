@@ -20,3 +20,10 @@ status_codes = {}
 regex = r'^([\d\.]+) - \[(.*?)\] "GET \/projects\/260 HTTP\/1\.1" \
 (\d+) (\d+|-)$'
 pattern = re.compile(regex)
+
+
+try:
+    fg
+
+except KeyboardInterrupt:
+    j = 6
