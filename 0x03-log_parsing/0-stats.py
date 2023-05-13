@@ -7,6 +7,10 @@ script that reads stdin line by line and computes metrics:
 import sys
 import re
 
+"""
+script that reads stdin line by line and computes metrics:
+"""
+
 # regular expression to match the input format
 regex = r'^([\d\.]+) - \[(.*?)\] "GET \/projects\/260 HTTP\/1\.1" (\d+) (\d+|-)$'
 pattern = re.compile(regex)
