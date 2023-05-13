@@ -33,8 +33,10 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 
-# Define a function to print the current metrics
 def print_metrics():
+    """ 
+    # Define a function to print the current metrics
+    """
     print(f"Total file size: {total_size}")
     for status_code in sorted(status_counts.keys()):
         if isinstance(status_code, int):
