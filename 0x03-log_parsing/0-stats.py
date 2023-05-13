@@ -42,9 +42,7 @@ try:
         # print statistics every 10 lines or on keyboard interruption
         if i % 10 == 0:
             print("Total file size:", total_size)
-            for rep in sorted(status_codes):
-                #""" loop """
-                print(f"{rep}: {status_codes[rep]}")
+
 
 except KeyboardInterrupt:
     """ print final statistics on keyboard interruption """
