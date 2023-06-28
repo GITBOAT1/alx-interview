@@ -12,7 +12,7 @@ def canUnlockAll(boxes):
     """
 
     num_boxes = len(boxes)
-    unlocked_boxes = [False] * num_boxes
+    unlocked_boxes = [False] * num_boxes  # set Each element in list to False
     unlocked_boxes[0] = True
     keys = [0]
 
