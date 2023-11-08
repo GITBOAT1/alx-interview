@@ -1,43 +1,36 @@
-const axios = require('axios');
+const request = require('request');
 
 // Define the base URL for the Star Wars API
 const baseUrl = 'https://swapi.dev/api';
 
 // Function to fetch movie details using the provided Movie ID
-async function getMovieCharacters(movieId) {
-  try {
+function getMovieCharacters(movieId) {
+  return new Promise((resolve, reject) => {
     // Make a request to fetch movie details
     const movieUrl = `${baseUrl}/films/${movieId}/`;
-    const movieResponse = await axios.get(movieUrl);
-
-    if (movieResponse.status === 200) {
-      const movieData = movieResponse.data;
-      const characterUrls = movieData.characters;
-      return characterUrls;
-    } else {
-      console.log(`Failed to fetch movie details. Status code: ${movieResponse.status}`);
-      return null;
-    }
-  } catch (error) {
-    console.error(`Request error: ${error.message}`);
-    return null;
-  }
+    request(movieUrl, (error, response, body) => {
+      if (!error && response.statusCode === 200) {
+        const movieData = JSON.parse(body);
+        const characterUrls = movieData.characters;
+        resolve(characterUrls);
+      } else {
+        reject(`Failed to fetch movie details. Status code: ${response ? response.statusCode : 'N/A'}`);
+      }
+    });
+  });
 }
 
 // Function to fetch and print character names
-async function printCharacterNames(characterUrls) {
+function printCharacterNames(characterUrls) {
   for (const characterUrl of characterUrls) {
-    try {
-      const characterResponse = await axios.get(characterUrl);
-      if (characterResponse.status === 200) {
-        const characterData = characterResponse.data;
+    request(characterUrl, (error, response, body) => {
+      if (!error && response.statusCode === 200) {
+        const characterData = JSON.parse(body);
         console.log(characterData.name);
       } else {
-        console.log(`Failed to fetch character details. Status code: ${characterResponse.status}`);
+        console.log(`Failed to fetch character details. Status code: ${response ? response.statusCode : 'N/A'}`);
       }
-    } catch (error) {
-      console.error(`Request error: ${error.message}`);
-    }
+    });
   }
 }
 
