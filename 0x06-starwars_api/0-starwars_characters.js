@@ -1,10 +1,13 @@
+#!/usr/bin/node
+
+
 const request = require('request');
 
 // Define the base URL for the Star Wars API
 const baseUrl = 'https://swapi.dev/api';
 
 // Function to fetch movie details using the provided Movie ID
-function getMovieCharacters (movieId) {
+function getMovieCharacters(movieId) {
   return new Promise((resolve, reject) => {
     // Make a request to fetch movie details
     const movieUrl = `${baseUrl}/films/${movieId}/`;
@@ -21,7 +24,7 @@ function getMovieCharacters (movieId) {
 }
 
 // Function to fetch and print character names
-function printCharacterNames (characterUrls) {
+function printCharacterNames(characterUrls) {
   for (const characterUrl of characterUrls) {
     request(characterUrl, (error, response, body) => {
       if (!error && response.statusCode === 200) {
