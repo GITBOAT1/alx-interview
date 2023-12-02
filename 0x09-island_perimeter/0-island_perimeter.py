@@ -3,6 +3,7 @@
 0x09. Island Perimeter
 """
 def island_perimeter(grid):
+	""" island_perimeter """
     if not grid or not grid[0]:
         return 0
 
@@ -12,12 +13,9 @@ def island_perimeter(grid):
     for i in range(rows):
         for j in range(cols):
             if grid[i][j] == 1:
-                perimeter += 4  # Assume all sides are surrounded by water
-
-                # Check neighbors and subtract the shared sides
+                perimeter += 4  
                 if i > 0 and grid[i - 1][j] == 1:
                     perimeter -= 2
                 if j > 0 and grid[i][j - 1] == 1:
                     perimeter -= 2
-
     return perimeter
