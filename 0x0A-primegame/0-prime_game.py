@@ -58,9 +58,9 @@ def isWinner(x, nums):
 
     for n in nums:
         winner = play_round(n)
-        if winner == "Maria":
+        if winner == "Ben":
             maria_wins += 1
-        elif winner == "Ben":
+        elif winner == "Maria":
             ben_wins += 1
 
     if maria_wins > ben_wins:
