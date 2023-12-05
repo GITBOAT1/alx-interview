@@ -2,12 +2,12 @@
 
 def isWinner(x, nums):
     """
-        aria and Ben are playing a game. Given a set of 
-        consecutive integers starting from 
+        aria and Ben are playing a game. Given a set of
+        consecutive integers starting from
     """
     def is_prime(num):
         """
-         up to and including n, they take turns 
+         up to and including n, they take turns
          choosing a prime
         """
         if num < 2:
@@ -19,8 +19,8 @@ def isWinner(x, nums):
 
     def get_primes(n):
         """
-        number from the set and removing that number 
-        and its multiples from the set. The player 
+        number from the set and removing that number
+        and its multiples from the set. The player
         that cannot make a move loses the game.
         """
         primes = []
@@ -32,7 +32,7 @@ def isWinner(x, nums):
     def play_round(n):
         """
         They play x rounds of the game, where n may
-          be different for each round. Assuming Maria 
+          be different for each round. Assuming Maria
         always goes first and both players play optimally,
         """
         primes = get_primes(n)
@@ -69,9 +69,3 @@ def isWinner(x, nums):
         return "Ben"
     else:
         return None
-
-# Example usage:
-x = 3
-nums = [4, 5, 1]
-result = isWinner(x, nums)
-print(result)  # Output: Maria
